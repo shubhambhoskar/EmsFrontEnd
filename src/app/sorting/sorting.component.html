@@ -1,0 +1,55 @@
+<p>sorting works!</p>
+
+<h1>Sorting Employee by Field</h1>
+
+<div class="col-md-6 offset-md-3"></div>
+<form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label>Field Name</label>
+            
+        <input type="text" 
+        class="form-control" 
+        [(ngModel)]="field" (change)="savefield($event)" [ngModelOptions]="{standalone: true}"
+
+        >
+        
+    </div>
+    
+    <div style="margin-bottom: 10px;"></div>
+    <button class="btn btn-success" type="submit">Submit</button>
+
+</form>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>emailId</th>
+            <th>phoneNumber</th>
+            <!-- <th>DepartmentId</th>
+            <th>DepartmentName</th> -->
+            
+        </tr>
+    </thead>
+
+    <tbody>
+       
+
+            <tr *ngFor="let emp of mappingObject">
+                <td>{{emp.employeeID}}</td>
+                <td>{{emp.employeeFirstName}}</td>
+                <td>{{emp.employeeLastName}}</td>
+                <td>{{emp.emailId}}</td>
+                <td>{{emp.phoneNumber}}</td>
+                <!-- <td>{{emp.department.departmentID}}</td>
+                <td>{{emp.department.departmentName}}</td> -->
+            
+
+            </tr>
+      
+    </tbody>
+</table>

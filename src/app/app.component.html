@@ -1,0 +1,66 @@
+<h1 class="text-center">{{title}}</h1>
+<!-- //nav bar -->
+
+<div class="navbar navbar-expand-sm bg-primary navbar-dark" style="margin-top: 10px; justify-content: space-between;">
+  <ul class="navbar-nav"> 
+    <a routerLink="app-logincomponent" routerLinkActive="active" class="nav-link" style="color:white">Login</a>
+  </ul>
+
+  <ul>
+    <Button class="btn btn-danger" (click)="logout()">LogOut</Button>
+  </ul>
+  </div>
+
+
+<div class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav"> 
+    <a routerLink="employees" routerLinkActive="active" class="nav-link" >Employee List</a>
+  </ul>
+
+  <ul class="navbar-nav"> 
+    <a routerLink="create-employee" routerLinkActive="active" class="nav-link" >Register Employee</a>
+  </ul>
+</div>
+
+<div class="navbar navbar-expand-sm bg-primary navbar-dark" style="margin-top: 10px;">
+  <ul class="navbar-nav"> 
+    <a routerLink="create-department" routerLinkActive="active" class="nav-link" style="color:white">Register Department</a>
+  </ul>
+
+  <ul class="navbar-nav"> 
+    <a routerLink="departments" routerLinkActive="active" class="nav-link" style="color:white">Department List</a>
+  </ul>
+
+  <ul class="navbar-nav"> 
+    <a routerLink="empdep/:eid/:did" routerLinkActive="active" class="nav-link" style="color:white">empdep</a>
+  </ul>
+
+  <ul class="navbar-nav"> 
+    <a routerLink="sorting/:field" routerLinkActive="active" class="nav-link" style="color:white">sortingEmployee</a>
+  </ul>
+
+  <ul class="navbar-nav"> 
+    <a routerLink="app-pagination" routerLinkActive="active" class="nav-link" style="color:white">Pagination Employees</a>
+  </ul>
+
+  <ul class="navbar-nav"> 
+    <a routerLink="app-criteria-pagination" routerLinkActive="active" class="nav-link" style="color:white">CriteriaPagination</a>
+  </ul>
+</div>
+
+
+<div class="container">
+
+  <!-- <app-employee-list></app-employee-list> -->
+  <!-- //replace with router -->
+  <router-outlet></router-outlet>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <span>
+      All Good
+    </span>
+  </div>
+</footer>

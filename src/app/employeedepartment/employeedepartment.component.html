@@ -1,0 +1,28 @@
+<p>employeedepartment works!</p>
+
+<h1>Register Employee to Department</h1>
+
+<div class="col-md-6 offset-md-3"></div>
+<form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label> Employee Id</label>
+        <input type="number" 
+        class="form-control" 
+        id="employeeID" 
+        [(ngModel)]="eid"
+        name="employeeID">
+        
+        <label> Department Id</label>
+            
+        <input type="number" 
+        class="form-control" 
+        id="departmentID" 
+        [(ngModel)]="did"
+        name="departmentID">
+    </div>
+    
+    <div style="margin-bottom: 10px;"></div>
+    <button class="btn btn-success" type="submit">Register</button>
+
+</form>

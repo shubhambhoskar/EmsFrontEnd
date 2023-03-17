@@ -1,0 +1,21 @@
+<p>create-department works!</p>
+<h1>Register Department</h1>
+
+<div class="col-md-6 offset-md-3"></div>
+<form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label> Department Name</label>
+            
+        <input type="text" 
+        class="form-control" 
+        id="departmentName" 
+        [(ngModel)]="department.departmentName"
+        name="departmentName">
+        
+    </div>
+    
+    <div style="margin-bottom: 10px;"></div>
+    <button class="btn btn-success" type="submit">Submit</button>
+
+</form>

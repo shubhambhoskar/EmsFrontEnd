@@ -1,0 +1,72 @@
+<p>pagination works!</p>
+
+<div class="col-md-6 offset-md-3"></div>
+<form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label>Page Number</label>
+            
+        <input type="text" 
+        class="form-control" 
+        [(ngModel)]="pnumber"  [ngModelOptions]="{standalone: true}"
+
+        >
+        
+    </div>
+
+    <div class="form-group">
+        <label>EmployeePerPage</label>
+            
+        <input type="text" 
+        class="form-control" 
+        [(ngModel)]="Empperpage" [ngModelOptions]="{standalone: true}"
+
+        >
+        
+    </div>
+    
+    <div style="margin-bottom: 10px;"></div>
+    <button class="btn btn-success" type="submit">Submit</button>
+
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th (click)="sort('id')">EmployeeId&nbsp;<i class="fa fa-sort"></i></th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>emailId</th>
+            <th>phoneNumber</th>
+            <!-- <th>DepartmentId</th>
+            <th>DepartmentName</th> -->
+            
+        </tr>
+    </thead>
+
+    <tbody>
+       
+
+            <tr *ngFor="let emp of mappingObject ">
+                <td>{{emp.employeeID}}</td>
+                <td>{{emp.employeeFirstName}}</td>
+                <td>{{emp.employeeLastName}}</td>
+                <td>{{emp.emailId}}</td>
+                <td>{{emp.phoneNumber}}</td>
+                <!-- <td>{{emp.department.departmentID}}</td>
+                <td>{{emp.department.departmentName}}</td> -->
+
+            </tr>
+      
+    </tbody>
+</table>
+
+<div>
+    <!-- [disabled]="isLastPage ()" -->
+    <button (click)="previouspage()"><</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <!-- [disabled]="isFirstPage()" -->
+    <button (click)="ForwardPage()" >></button>
+
+</div>

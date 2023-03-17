@@ -1,0 +1,27 @@
+<p>department-list works!</p>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>DepartmentId</th>
+            <th>DepartmentName</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let dept of departments">
+
+            <td>{{dept.departmentID}}</td>
+            <td>{{dept.departmentName}}</td>
+            <td>
+                <button (click)="deleteDepartment(dept.departmentID)" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+                <button  class="btn btn-info" (click)="getlistofemployyebydept(dept.departmentName)">ListofEmpbydept</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

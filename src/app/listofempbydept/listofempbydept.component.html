@@ -1,0 +1,26 @@
+<p>listofempbydept works!</p>
+
+<h1>List of Employee</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>emailId</th>
+            <th>phoneNumber</th>
+            
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let emp of emps">
+            <td>{{emp.employeeFirstName}}</td>
+            <td>{{emp.employeeLastName}}</td>
+            <td>{{emp.emailId}}</td>
+            <td>{{emp.phoneNumber}}</td>
+            
+        </tr>
+    </tbody>
+</table>

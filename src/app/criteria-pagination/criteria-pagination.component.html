@@ -1,0 +1,105 @@
+<p>criteria-pagination works!</p>
+
+    
+<div class="col-md-6 offset-md-3"></div>
+<form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label> Offset</label>
+            <!-- <input type="text"class="form-control" id="employeeFirstName"
+            [(ngModel)]="employee.employeeFirstName"
+            name="employee" > -->
+        <input type="number" 
+        class="form-control" 
+        id="Offset" 
+        [(ngModel)]="offset"
+        name="Offset">
+        
+    </div>
+    <div class="form-group">
+        <label> EmployeePerPage</label>
+        <input type="number" 
+        class="form-control" 
+        id="EmployeePerPage" 
+        [(ngModel)]="empperpage"
+        name="EmployeePerPage">
+        
+    </div>
+    <div class="form-group">
+        <label> SearchingField</label>
+           
+        <input type="text" 
+        class="form-control" 
+        id="SearchingField" 
+        [(ngModel)]="searchfield"
+        name="SearchingField">
+        
+    </div>
+    <div class="form-group">
+        <label> SortBy</label>
+            
+        <input type="text" 
+        class="form-control" 
+        id="SortBy" 
+        [(ngModel)]="sortby"
+        name="SortBy">
+        
+    </div>
+
+    <div class="form-group">
+        <label> SortBy ascending or descending order</label>
+            
+        <input type="boolean" 
+        class="form-control" 
+        id="direction" 
+        [(ngModel)]="direction"
+        name="direction">
+        
+    </div>
+
+    
+
+
+
+    <div style="margin-bottom: 10px;"></div>
+    <button class="btn btn-success" type="submit">Submit</button>
+
+</form>
+
+    
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>emailId</th>
+            <th>phoneNumber</th>
+            <!-- <th>DepartmentId</th>
+            <th>DepartmentName</th> -->
+            
+        </tr>
+    </thead>
+
+    <tbody>
+       
+
+            <tr *ngFor="let emp of mappingObject">
+                <td>{{emp.employeeID}}</td>
+                <td>{{emp.employeeFirstName}}</td>
+                <td>{{emp.employeeLastName}}</td>
+                <td>{{emp.emailId}}</td>
+                <td>{{emp.phoneNumber}}</td>
+                <!-- <td>{{emp.department.departmentID}}</td>
+                <td>{{emp.department.departmentName}}</td> -->
+            
+
+            </tr>
+      
+    </tbody>
+</table>
+
+<div style="text-align: center;">  
+    <button class="btn btn-info" (click)="prev()" [disabled]="isFirstPage()">Previous</button>
+    <button class="btn btn-info" (click)="next()" [disabled]="isLastPage()" id="next">Next</button>  
+</div>
